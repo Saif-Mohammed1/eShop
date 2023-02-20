@@ -14,7 +14,7 @@ const HomeItems = ({ items }) => {
   const { imageUrl, title, route } = items;
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const onNavigateHandler = () => navigate(route);
+  const onNavigateHandler = () => navigate(route.toLowerCase());
   const deleteItemHandler = async () => {
     await deleteHomeForm(title);
     dispatch(homeItemsStart());
