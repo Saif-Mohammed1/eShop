@@ -185,6 +185,8 @@ export const NavLink = styled(Link)`
     font-size: 16px;
     font-weight: bold;
     color: ${GlColor};
+    width: max-content;
+
     span {
       display: block;
       font-size: 9px;
