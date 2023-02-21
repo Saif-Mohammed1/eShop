@@ -6,6 +6,7 @@ const base = styled(FontAwesomeIcon)`
   width: 15px;
   border-radius: 50%;
   margin-bottom: 6px;
+  color: white;
   cursor: pointer;
   &:hover {
     opacity: 0.7;
@@ -15,7 +16,7 @@ const base = styled(FontAwesomeIcon)`
 export const AboutContainer = styled.div`
   margin-top: -24px;
   ul {
-    list-style: auto;
+    list-style: decimal;
   }
 `;
 export const Info = styled.div`
@@ -42,9 +43,9 @@ export const Social = styled.ul`
   display: flex;
   list-style: none !important;
   margin-top: 30px;
-
+  padding: 0;
   li {
-    margin-left: 10px;
+    padding: 0 4px;
   }
 `;
 

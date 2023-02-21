@@ -1,5 +1,5 @@
 import { Outlet, useNavigate } from "react-router-dom";
-import { faSearch, faShop } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faShop, faBars } from "@fortawesome/free-solid-svg-icons";
 import {
   NavigationContainer,
   LogoContainer,
@@ -9,6 +9,8 @@ import {
   EShopIcon,
   SignOut,
   SearchFieldForm,
+  Bars,
+  NavContainer,
 } from "./navigation.styles";
 import CartIcon from "../../cartIcon/cartIcon.component";
 import { useDispatch, useSelector } from "react-redux";
@@ -28,7 +30,10 @@ const Navigation = () => {
   const dispatch = useDispatch();
   const signOutHandler = () => dispatch(signOutStart());
   const navigate = useNavigate();
-
+  const [showNavLinks, setShowNavLinks] = useState(false);
+  const toggleNavLinks = () => {
+    setShowNavLinks(!showNavLinks);
+  };
   const submitHandler = (e) => {
     e.preventDefault();
     navigate(`/search?name=${searchFiled}`);
@@ -37,10 +42,10 @@ const Navigation = () => {
   return (
     <>
       <NavigationContainer>
-        <LogoContainer to="/">
-          <EShopIcon icon={faShop} />
-        </LogoContainer>
-        <NavLinks>
+        <NavContainer>
+          <LogoContainer to="/">
+            <EShopIcon icon={faShop} />
+          </LogoContainer>
           <NavLink to="/shop">
             <span className="eShop">eSHOP</span>
           </NavLink>
@@ -53,9 +58,12 @@ const Navigation = () => {
             />
             <SearchIcon icon={faSearch} />
           </SearchFieldForm>
+        </NavContainer>
+        <Bars icon={faBars} onClick={toggleNavLinks}></Bars>
+        <NavLinks clicked={showNavLinks}>
           {IsAdmin && (
             <NavLink to="/shop/addItems">
-              <span className="eShop">+</span>
+              <span className="add">+</span>
             </NavLink>
           )}
           {currentUser ? (

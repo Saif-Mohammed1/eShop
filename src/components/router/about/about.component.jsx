@@ -58,11 +58,11 @@ const About = () => {
     <AboutContainer>
       <Info>
         <Image
-          src="https://lh3.googleusercontent.com/XYxtjRUJNIkGVfdbIXoPQSiESShEfCkNdstDD8uAH2v3H_0b88CDukuxsU9rj2HnNSEBTdTHXm5Pm1zzZ52KEiVFwtULkPCSVZ7WWL_nw3f6AD-Q3Gjbm-A8xJl6jMOjb7Y_S_y2j_i8SYEWsbxa2kl8UjP0etcWXBP0PeE-25O5zFan7rI5eT6SyGFx2jbGUqzMxrHR6MFeqO22JpayYn2AezpRxBnVL5wF4SBGjM5ajPANx6WtHK7k_8Iif-JlJ0i-AXcBqpJDoSbxET15XLF_4uWhMrN5lrLnFDinY76CPBNqqt3tpMLDUxvg1FVdBklX3NyYVo47USh_cbRfi9g4L9o_r9_it16l15ml8ZWX4rfZLdXY9tmcPhq9SjQ-1En44edh85uZNvP_cRlA6CzISbO8wKpdBuHDeR8LStwA7TOBvastjLLPxj67g6WQvCj3DDvYlk6jciwXQqzODM0mT8z2iDcjjkkTRxfk_GUBrT8oZ_fEGsYfrXFKPB7TlQpBxhoXngYLxnR-X43Ps2jUzyHvDgJaT4pMIN52qFHdw8SNbEkD7maWRaFi101guIx-M7s9T6WGOUwkBfEhWnFiq6vq3gypC5LNubba_ucQo5wN_pXq6NUCq_QZom442fYLH0yWsKwe3DEROi26ny7FPWTjWhLYXk1cnw5QRz9hi3FX6kyTGuq9LJNNVv2T9U2q2mLCxNMwpr9iubzDErw2MhEWxiGWbMxx1hrn9OBU4UPtlKVry9m-D4-4j8R4C2dPCm0v_ZKsqCW6pwpQezHaWaHodOsOggfC6awkWHHZzOKYnCYHRChUohbfb78-52_QnrjZ3kVb6-mgSHtlATvU502Pcw-S_1NbUTDto3cQJEM0XeO5wzVvFOmsmhyO5Z5i_ZyDZ4TInfHnCjIxSHiz1bKgClbjqaoW4W3ny__JTm7EiJdKRClvlFvtSJFsv0UIflz6yhFpgV_PCakzThNsvD__xn4FL3_ThzDA_JZJqaI191N0Yh_kZqfUd93CJ2vCkM8xSbpVfoilRPYR7u5WKSXT4S3mU0YvnGTkTDxITwTFjdQwpriszZc=s256-no?authuser=4"
+          src="https://github.com/Saif-Mohammed1/eShop/blob/master/public/saif.png?raw=true"
           alt="Saif Mohammed"
         />
         <p>
-          Hello everyone My name is <span>Saif Mohammed</span>
+          Hello everyone. My name is <span>Saif Mohammed</span>
         </p>
         <p>Location : Egypt</p>
         <Social>
@@ -153,7 +153,7 @@ const About = () => {
         </p>
       </Description>
       <Skill>
-        <h1>Skilled I used in my project</h1>
+        <h1>Skills I used in my project</h1>
         <ul>
           {skills.map((skill, index) => (
             <Fragment key={index}>

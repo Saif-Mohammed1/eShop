@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import {
   googlePopSignIn,
   signInWithEmailAndPasswordStart,
 } from "../../store/user/user.action";
-import { Input, LinkS, SignInContainer, UserIcon } from "./signIn.styles";
+import { Input, LinkS, SignInContainer } from "./signIn.styles";
 const defaultFormField = { email: "", password: "" };
 const SignInForm = () => {
   const [formField, setFormFiled] = useState(defaultFormField);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { email, password } = formField;
   const resetFormFields = () => {
     setFormFiled(defaultFormField);
@@ -20,6 +22,7 @@ const SignInForm = () => {
 
     try {
       dispatch(signInWithEmailAndPasswordStart(email, password));
+      navigate("/");
       resetFormFields();
     } catch (error) {
       alert(error);
