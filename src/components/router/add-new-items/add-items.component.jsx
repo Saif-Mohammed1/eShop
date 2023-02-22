@@ -66,8 +66,12 @@ const AddItems = () => {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    setNewItem({ ...newItem, [name]: value });
+    setNewItem((newItem) => ({
+      ...newItem,
+      [name]: name === "rating" ? Number(value) : value,
+    }));
   };
+
   const handleHomeSubmit = (e) => {
     e.preventDefault();
     homeItem.id = Date.now();

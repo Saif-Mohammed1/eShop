@@ -36,6 +36,7 @@ const SignInForm = () => {
 
   const googleSignIn = () => {
     dispatch(googlePopSignIn());
+    navigate("/");
   };
   return (
     <SignInContainer>
