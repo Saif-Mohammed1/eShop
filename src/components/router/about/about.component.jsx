@@ -57,7 +57,10 @@ const About = () => {
   return (
     <AboutContainer>
       <Info>
-        <Image src="../../../assets/saif.png" alt="Saif Mohammed" />
+        <Image
+          src="https://github.com/Saif-Mohammed1/eShop/blob/master/src/assets/saif.png?raw=true"
+          alt="Saif Mohammed"
+        />
         <p>
           Hello everyone. My name is <span>Saif Mohammed</span>
         </p>
