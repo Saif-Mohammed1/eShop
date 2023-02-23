@@ -107,6 +107,7 @@ export const NavigationContainer = styled.div`
 
   @media (max-width: 690px) {
     height: 50px;
+    padding: 0 4px;
   }
 `;
 
