@@ -29,7 +29,6 @@ const ProductCard = ({ item, title }) => {
   }, [categoriesArray]);
   const [updateItems, setUpdateItems] = useState(defaultFiled);
   const { name, price, imageUrl, rating } = item;
-
   const [isEdit, setEdit] = useState(false);
   const cartItems = useSelector(selectCartItems);
   const addItemsHandler = () => dispatch(addItemToCart(cartItems, item));
@@ -118,7 +117,7 @@ const ProductCard = ({ item, title }) => {
               <p>{price}$</p>
               <div>
                 {rating &&
-                  Array(rating)
+                  Array(rating * 1)
                     .fill()
                     .map((_, i) => <p>⭐</p>)}
               </div>
