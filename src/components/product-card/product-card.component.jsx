@@ -26,11 +26,13 @@ const ProductCard = ({ item, title }) => {
   const dispatch = useDispatch();
   useEffect(() => {
     setShopData(categoriesArray);
-  }, [categoriesArray]);
+  }, [categoriesArray, dispatch]);
+
   const [updateItems, setUpdateItems] = useState(defaultFiled);
   const { name, price, imageUrl, rating } = item;
   const [isEdit, setEdit] = useState(false);
   const cartItems = useSelector(selectCartItems);
+
   const addItemsHandler = () => dispatch(addItemToCart(cartItems, item));
   const updateItem = (title, updatedItem) => {
     title = title.charAt(0).toUpperCase() + title.slice(1).toLowerCase();
@@ -39,6 +41,7 @@ const ProductCard = ({ item, title }) => {
         const index = data.items.findIndex(
           (item) => item.id === updatedItem.id
         );
+
         data.items[index] = { ...data.items[index], ...updatedItem };
       }
       return data;
@@ -56,16 +59,6 @@ const ProductCard = ({ item, title }) => {
 
     if (price === 0 || rating === 0) return;
 
-    if (
-      updateItems.imageUrl === "" ||
-      updateItems.name === "" ||
-      updateItems.price === ""
-    ) {
-      updateItems.imageUrl = item.imageUrl;
-      updateItems.name = item.name;
-      updateItems.price = item.price;
-    }
-
     updateItem(title, updateItems);
   };
   const handleInputChange = (event) => {
@@ -73,8 +66,8 @@ const ProductCard = ({ item, title }) => {
 
     setUpdateItems({ ...updateItems, [name]: value });
   };
-  const removeItem = () => {
-    deleteFormField(title, item.id);
+  const removeItem = async () => {
+    await deleteFormField(title, item.id);
     dispatch(fetchCategoriesStart());
   };
 

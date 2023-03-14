@@ -41,6 +41,11 @@ const projects = [
   { name: "To-DO-List", Url: "https://saif-mohammed1.github.io/To-DO-List/" },
   ,
   {
+    name: "Wheather-App",
+    Url: "https://fastidious-cupcake-4ef5a8.netlify.app/",
+  },
+  ,
+  {
     name: "HTML_CSS_Template_One",
     Url: "https://saif-mohammed1.github.io/HTML_CSS_Template_One/",
   },
@@ -62,7 +67,8 @@ const About = () => {
           alt="Saif Mohammed"
         />
         <p>
-          Hello everyone. My name is <span>Saif Mohammed</span>
+          Hello everyone. My name is <span>Saif Mohammed</span> I'm FrontEnd
+          developer
         </p>
         <p>Location : Egypt</p>
         <Social>

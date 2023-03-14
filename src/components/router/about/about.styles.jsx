@@ -29,6 +29,8 @@ export const Info = styled.div`
   & p {
     margin: 10px 0;
     font-size: 20px;
+    width: 410px;
+    text-align: center;
 
     & span {
       font-weight: bold;

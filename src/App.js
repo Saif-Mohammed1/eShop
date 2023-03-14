@@ -1,17 +1,27 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import Navigation from "./components/router/navigation/navigation.component";
 import { useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import { checkUserSession } from "./store/user/user.action";
-import Home from "./components/router/home/home.component";
-import CheckOut from "./components/router/checkOut/checkOut.component";
-import Shop from "./components/shop/shop.component";
-import Authentication from "./components/router/authentication/authentication";
-
-import SearchFiled from "./components/router/searchFiled/searchFiled.component";
-import About from "./components/router/about/about.component";
 import { homeItemsStart } from "./store/home/home.action";
+
+import Spinner from "./components/spinner/spinner.component";
+const Navigation = lazy(() =>
+  import("./components/router/navigation/navigation.component")
+);
+const Home = lazy(() => import("./components/router/home/home.component"));
+const Shop = lazy(() => import("./components/shop/shop.component"));
+const Authentication = lazy(() =>
+  import("./components/router/authentication/authentication")
+);
+const CheckOut = lazy(() =>
+  import("./components/router/checkOut/checkOut.component")
+);
+const SearchFiled = lazy(() =>
+  import("./components/router/searchFiled/searchFiled.component")
+);
+const About = lazy(() => import("./components/router/about/about.component"));
+
 const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -22,16 +32,18 @@ const App = () => {
   }, []);
 
   return (
-    <Routes>
-      <Route path="/" element={<Navigation />}>
-        <Route index element={<Home />} />
-        <Route path="shop/*" element={<Shop />} />
-        <Route path="auth/*" element={<Authentication />} />
-        <Route path="checkOut" element={<CheckOut />} />
-        <Route path="search" element={<SearchFiled />} />
-        <Route path="about" element={<About />} />
-      </Route>
-    </Routes>
+    <Suspense fallback={<Spinner />}>
+      <Routes>
+        <Route path="/" element={<Navigation />}>
+          <Route index element={<Home />} />
+          <Route path="shop/*" element={<Shop />} />
+          <Route path="auth/*" element={<Authentication />} />
+          <Route path="checkOut" element={<CheckOut />} />
+          <Route path="search" element={<SearchFiled />} />
+          <Route path="about" element={<About />} />
+        </Route>
+      </Routes>
+    </Suspense>
   );
 };
 

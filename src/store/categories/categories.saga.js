@@ -20,6 +20,7 @@ function* onFetchCategoriesStart() {
 function* categoriesFetched() {
   try {
     const categoriesArray = yield call(getCategoriesAndDocuments, "categories");
+
     yield put(fetchCategoriesSuccess(categoriesArray));
   } catch (error) {
     yield put(fetchCategoriesFailed(error));
