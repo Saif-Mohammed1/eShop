@@ -41,7 +41,7 @@ const projects = [
   { name: "To-DO-List", Url: "https://saif-mohammed1.github.io/To-DO-List/" },
   ,
   {
-    name: "Wheather-App",
+    name: "Weather-App",
     Url: "https://fastidious-cupcake-4ef5a8.netlify.app/",
   },
   ,
