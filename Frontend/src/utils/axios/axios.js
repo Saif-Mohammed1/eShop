@@ -1,8 +1,9 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_ENDPOINT,
+  // baseURL: process.env.REACT_APP_API_ENDPOINT,
   // withCredentials: true,
+  baseURL: "http://localhost:8000/api",
 });
 
 // Request interceptor

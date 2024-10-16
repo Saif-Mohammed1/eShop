@@ -37,14 +37,14 @@ const SignUpForm = () => {
   const onSubmitHandler = (e) => {
     e.preventDefault();
     setError([]);
-    api
-      .get("/sanctum/csrf-cookie")
-      .then((response) => {
-        dispatch(signUpStart(name, email, password, confirmPassword));
-      })
-      .catch((err) => {
-        alert(err);
-      });
+    // api
+    //   .get("/sanctum/csrf-cookie")
+    //   .then((response) => {
+    dispatch(signUpStart(name, email, password, confirmPassword));
+    // })
+    // .catch((err) => {
+    //   alert(err);
+    // });
   };
   return (
     <SignUpContainer>

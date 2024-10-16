@@ -46,14 +46,14 @@ const SignInForm = () => {
     setError([]);
     if (!email || !password) return;
 
-    api
-      .get("/sanctum/csrf-cookie")
-      .then((response) => {
-        dispatch(signInWithEmailAndPasswordStart(email, password));
-      })
-      .catch((err) => {
-        alert(err);
-      });
+    // api
+    //   .get("/sanctum/csrf-cookie")
+    //   .then((response) => {
+    dispatch(signInWithEmailAndPasswordStart(email, password));
+    // })
+    // .catch((err) => {
+    //   alert(err);
+    // });
   };
 
   const onChangeHandler = (e) => {
