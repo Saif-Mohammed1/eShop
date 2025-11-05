@@ -1,0 +1,21 @@
+# Environment files - prevent from being published anywhere
+**/.env
+**/.env.*
+!**/.env.example
+.env
+.env.*
+!.env.example
+
+# Backend specific
+Backend/.env
+Backend/.env.*
+!Backend/.env.example
+
+# Frontend specific
+Frontend/.env
+Frontend/.env.*
+!Frontend/.env.example
+Frontend/.env.local
+Frontend/.env.development.local
+Frontend/.env.test.local
+Frontend/.env.production.local
